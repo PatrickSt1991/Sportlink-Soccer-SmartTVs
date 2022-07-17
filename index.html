@@ -1,0 +1,59 @@
+<!------------------------------------------------------->
+<!--                                       				->
+<!--  Author: Patrick Stel                 				->
+<!--  Date: 02-07-20022                    				->
+<!--  Purpose: sportlink data fetching     				->
+<!--  Version: V1.0 - Season 2021 - 2022   				->
+<!--           V2.0 - Season 2022 - 2023 - New Styling	->
+<!--   License: Apache License 2.0			 			->
+<!--                                      				->
+<!------------------------------------------------------->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+	<meta http-equiv="refresh" content="120">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Wedstrijdprogramma,WVV1896">
+    <meta name="author" content="Patrick Stel">
+
+    <title>Dashboard</title>
+
+	<!-- Bootstrap core CSS -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	
+	<!-- Bootstrap core JS -->
+	<script src="js/jquery-3.2.1.slim.min.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+
+    <!-- Custom styles for this template -->
+	<link href="css/custom_style.css" rel="stylesheet">
+	<link href="css/flickity.min.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <!-- Begin page content -->
+
+    <main role="main" class="container-fluid" id="contentBox">
+	  <!-- Main top bar -->
+	  <div id="rcorners">
+		<p id="topbar">Dashboard</p>
+	  </div>
+	  <div id="rcorners_matchinfo" data-autoscroll>
+		<div id="placeholderDiv_fixed" style="margin-bottom:15px; margin-top: 25px;">
+			<div id="topbar" style="background-color:#bd213069; color: #ffffff" style="cursor: pointer;" onclick="window.location='wedstrijdinfo.html';">Wedstrijd Informatie TV (INGANG)</div>
+		</div>
+		
+		<div id="placeholderDiv_fixed">
+			<div id="topbar" style="background-color:#bd213069; color:#ffffff;" style="cursor: pointer;" onclick="window.location='uitslagen.html';">Programma / Uitslagen TV (KANTINE)</div>
+		</div>
+		<!-- komt vanuit sportlink_fetching.js -->
+	  </div>
+    </main>
+
+    <footer class="footer">
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,335 @@
+
+/*body, html {*/
+html {
+    /* background-image: url("../images/bg_wvv.jpg"); */
+	background-image: url("../images/bg_temp.jpg"); 
+	height: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+body {
+	background-color: transparent;
+}
+
+#contentBox {
+	 width: 90%; 
+	 margin-top: 50px;
+}
+
+#rcorners {
+	width: 100%;
+	border-radius: 25px;
+	height: 60px;  
+	display: flex;
+}
+
+#rcorners_matchinfo {
+	width: 100%;
+	border-radius: 25px;
+	font-size: 20px;
+	font-weight: bold;
+	position: relative;
+	overflow: hidden;
+	height: 750px;
+}
+
+#rcorners_matchinfo_fixed {
+	width: 100%;
+	border-radius: 25px;
+	font-size: 20px;
+	font-weight: bold;
+	position: relative;
+	overflow: hidden;
+	height: 750px;
+}
+
+#topbar {
+	background: #f5f5f5;
+	width: inherit;
+	border-radius: 25px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 30px;
+	height: 50px;
+}
+
+#topbar_image {
+	background: #f5f5f5;
+	width: inherit;
+	border-radius: 25px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 30px;
+	height: fit-content;
+	padding-bottom: 5px;
+}
+
+
+#datumProgramma {
+	padding: 2px 15px; /* Used to be 18 */
+	width: 10%;
+	border-top-left-radius: 25px;
+	border-bottom-left-radius: 25px;
+	background: #de0b0b;
+	font-weight: bold;
+	color: #ffffff;
+	text-align: center;
+}
+
+#datumUitslag {
+	padding: 18px 15px; /* Used to be 18 */
+	width: 10%;
+	border-top-left-radius: 25px;
+	border-bottom-left-radius: 25px;
+	background: #de0b0b;
+	font-weight: bold;
+	color: #ffffff;
+	text-align: center;
+}
+
+
+#thuisclublogo {
+	width: 10%;
+	font-weight: bold;
+	color: #ffffff;
+	background: #000000;
+	text-align: left;
+}
+
+#thuisteam {
+	padding: 18px 15px;
+	width: 25%;
+	font-weight: bold;
+	color: #ffffff;
+	background: #000000;
+	text-align: center;
+}
+
+#thuisteam_wedstrijdinfo {
+	padding: 18px 15px;
+	width: 30%;
+	font-weight: bold;
+	color: #ffffff;
+	background: #000000;
+	text-align: center;
+}
+
+#thuisscore {
+	padding: 18px 15px;
+	width: 8%;
+	background: #de0b0b;
+	font-weight: bold;
+	color: #ffffff;
+	text-align: center;
+}
+
+#scoredevider {
+	padding: 18px 15px;
+	width: 7%;
+	background: #de0b0b;
+	font-weight: bold;
+	color: #ffffff;
+	text-align: center;
+}
+
+#wedstrijdUitslag {
+	padding: 18px 15px;
+	width: 7%;
+	background: #de0b0b;
+	font-weight: bold;
+	color: #ffffff;
+	text-align: center;
+}
+
+#uitscore {
+	padding: 18px 15px;
+	width: 8%;
+	background: #de0b0b;
+	font-weight: bold;
+	color: #ffffff;
+	text-align: center;
+}
+
+#uitteam {
+	padding: 18px 15px;
+	width: 25%;
+	font-weight: bold;
+	color: #ffffff;
+	background: #000000;
+	text-align: center;
+}
+
+#uitteam_wedstrijdinfo {
+	padding: 18px 15px;
+	width: 30%;
+	font-weight: bold;
+	color: #ffffff;
+	background: #000000;
+	text-align: center;
+}
+
+#uitclublogo{
+	padding: 18px 15px;
+	width: 10%;
+	font-weight: bold;
+	color: #ffffff;
+	background: #000000;
+	border-top-right-radius: 25px;
+	border-bottom-right-radius: 25px;
+	border: #000000;
+	text-align: center;
+}
+
+#uitclublogoprogramma{
+	width: 10%;
+	font-weight: bold;
+	color: #ffffff;
+	background: #000000;
+	border: #000000;
+	text-align: right;
+}
+
+#matchtype {
+	padding: 18px 15px;
+	width: 13%;
+	border-top-right-radius: 25px;
+	border-bottom-right-radius: 25px;
+	background: #de0b0b;
+	font-weight: bold;
+	color: #ffffff;
+	text-align: center;
+}
+
+#clublogoimage {
+	width: 55%;
+	height: 65px;
+	background-color: #000;
+}
+
+#placeholderDiv {
+	width: 100%;
+	border-radius: 25px;
+	height: 65px;  
+	display: flex;
+	margin-bottom: 18px;
+}
+
+#kleedkamer {
+    padding: 18px 15px;
+    width: 10%;
+    background: #de0b0b;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: center;
+}
+
+#wedstrijdveld {
+	padding: 18px 15px;
+    width: 10%;
+    font-weight: bold;
+    color: #ffffff;
+    background: #000000;
+    text-align: center;
+	border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+
+#datumUitslag_fixed {
+	padding: 10px 15px;
+	width: 10%;
+	border-top-left-radius: 25px;
+	border-bottom-left-radius: 25px;
+	font-weight: bold;
+	opacity:0.7;
+	background: #de0b0b;
+	color: #ffffff;
+	text-align: center;
+}
+
+#thuisteam_fixed {
+	padding: 10px 15px;
+	width: 30%;
+	font-weight: bold;
+	opacity:0.7;
+	background: #de0b0b;
+	color: #ffffff;
+	text-align: center;
+}
+
+#kleedkamer_fixed {
+    padding: 10px 15px;
+    width: 10%;
+    opacity:0.7;
+	background: #de0b0b;
+	color: #ffffff;
+    font-weight: bold;
+    text-align: center;
+}
+
+#uitteam_fixed {
+	padding: 10px 15px;
+	width: 30%;
+	font-weight: bold;
+	opacity:0.7;
+	background: #de0b0b;
+	color: #ffffff;
+	text-align: center;
+}
+
+#wedstrijdveld_fixed {
+	padding: 10px 15px;
+    width: 10%;
+    font-weight: bold;
+    background: #de0b0b;
+	opacity:0.7;
+	color: #ffffff;
+    text-align: center;
+	border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+#placeholderDiv_fixed {
+	width: 100%;
+	border-radius: 25px;
+	height: 50px;  
+	display: flex;
+	margin-bottom: 5px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 5%; /* Set the fixed height of the footer here */
+  line-height: 60px; /* Vertically center the text there */
+  background-color: #bd213069;
+}
+
+/* SPONSOR SLIDE BAR */
+
+.slide {
+  width: 23vw;
+  max-resolution: 76px;
+  margin-right: 76px;
+  text-align: center;
+  height: 65px;
+  border-radius: 6px;
+  color: #fff;
+  font-family: 'Helvetica Neue', helvetica, arial;
+  font-size: 24px;
+  line-height: 5vh;
+  
+  $numItems: 12;
+  $eachDeg: 100deg / $numItems;
+  $color: blue;
+  
+  @for $idx from 1 through $numItems {
+    &:nth-child(#{$idx}) {
+      background-color: adjust-hue($color, $eachDeg * $idx);
+    }
+  }
+}
+

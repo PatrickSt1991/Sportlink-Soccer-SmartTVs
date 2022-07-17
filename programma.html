@@ -1,0 +1,80 @@
+<!------------------------------------------------------->
+<!--                                       				->
+<!--  Author: Patrick Stel                 				->
+<!--  Date: 02-07-20022                    				->
+<!--  Purpose: sportlink data fetching     				->
+<!--  Version: V1.0 - Season 2021 - 2022   				->
+<!--           V2.0 - Season 2022 - 2023 - New Styling	->
+<!--   License: Apache License 2.0			 			->
+<!--                                      				->
+<!------------------------------------------------------->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+	<meta http-equiv="refresh" content="120;url=uitslagen.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Wedstrijdprogramma,WVV1896">
+    <meta name="author" content="Patrick Stel">
+
+    <title>Wedstrijdprogramma</title>
+
+	<!-- Bootstrap core CSS -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	
+	<!-- Bootstrap core JS -->
+	<script src="js/jquery-3.2.1.slim.min.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+
+    <!-- Custom styles for this template -->
+	<link href="css/custom_style.css" rel="stylesheet">
+	<link href="css/flickity.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <!-- Begin page content -->
+
+    <main role="main" class="container-fluid" id="contentBox">
+	  <!-- Main top bar -->
+	  <div id="rcorners">
+		<p id="topbar">Wedstrijdprogramma</p>
+	  </div>
+	  <div id="rcorners_matchinfo" data-autoscroll>
+		<!-- komt vanuit sportlink_fetching.js -->
+	  </div>
+    </main>
+
+    <footer class="footer">
+		<div class="slideshow js-slideshow" style="height: 65px;">
+			<div class="slide"><img src="images/sponsor/rse_bev.svg"></div>
+			<div class="slide"><img src="images/sponsor/rse_tel.png"></div>
+			<div class="slide"><img src="images/sponsor/jumbojan.png"></div>
+			<div class="slide"><img src="images/sponsor/hyzon.png"></div>
+			<div class="slide"><img src="images/sponsor/top1toys.png"></div>
+			<div class="slide"><img src="images/sponsor/keepersfabriek.png"></div>
+			<div class="slide"><img src="images/sponsor/detreffer.png"></div>
+			<div class="slide"><img src="images/sponsor/muuroloog.png"></div>
+			<div class="slide"><img src="images/sponsor/wvv2.jpg"></div>
+			<div class="slide"><img src="images/sponsor/hofman.png"></div>
+			<div class="slide"><img src="images/sponsor/stukaschuur.jpg"></div>
+			<div class="slide"><img src="images/sponsor/soko.png"></div>
+			<div class="slide"><img src="images/sponsor/schrantee.png"></div>
+			<div class="slide"><img src="images/sponsor/rghandschoenen.png"></div>
+			<div class="slide"><img src="images/sponsor/caravan_centrum_oldambt.jpg"></div>
+			<div class="slide"><img src="images/sponsor/hartman.png"></div>
+		</div>
+    </footer>
+	<script src="js/jquery-library.js"></script>
+	<script src="js/sportlink_fetching.js"></script>
+	<script src="js/jquery.autoscroll.js"></script>
+	<script src="js/flickity.pkgd.min.js"></script>
+	<script src="js/carousel.js"></script>
+	<script>
+		if (document.cookie.indexOf('height=') == '-1'){
+			fetchProgramma();
+			location.reload();
+		}
+		fetchProgramma();
+	</script>
+  </body>
+</html>
