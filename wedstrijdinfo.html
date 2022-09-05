@@ -41,7 +41,7 @@
 	  <div id="rcorners">
 		<p id="topbar">Wedstrijd Informatie</p>
 	  </div>
-	  <div id="rcorners_matchinfo" data-autoscroll>
+	  <div id="rcorners_matchinfo_fixed">
 		<div id="placeholderDiv_fixed">
 			<div id="datumUitslag_fixed">Aanvang</div>
 			<div id="thuisteam_fixed">Thuisteam</div>
@@ -50,6 +50,7 @@
 			<div id="kleedkamer_fixed">Kleedkamer</div>
 			<div id="wedstrijdveld_fixed">Veld</div>
 		</div>
+		<div id="rcorners_matchinfo" data-autoscroll>
 		<!-- komt vanuit sportlink_fetching.js -->
 	  </div>
     </main>
@@ -64,7 +65,6 @@
 			<div class="slide"><img src="images/sponsor/keepersfabriek.png"></div>
 			<div class="slide"><img src="images/sponsor/detreffer.png"></div>
 			<div class="slide"><img src="images/sponsor/muuroloog.png"></div>
-			<div class="slide"><img src="images/sponsor/wvv2.jpg"></div>
 			<div class="slide"><img src="images/sponsor/hofman.png"></div>
 			<div class="slide"><img src="images/sponsor/stukaschuur.jpg"></div>
 			<div class="slide"><img src="images/sponsor/soko.png"></div>
@@ -80,11 +80,16 @@
 	<script src="js/flickity.pkgd.min.js"></script>
 	<script src="js/carousel.js"></script>
 	<script>
-		if (document.cookie.indexOf('height=') == '-1'){
+		var cookieCheck = (document.cookie).split('=').pop().split('-')[1];
+		var heightCheck = (document.cookie).split('=').pop().split('-')[0];
+		
+		if ((cookieCheck === 'spelendeWedstrijden') && (heightCheck != null)){
+			console.log('Laat wedstrijden voor vandaag zien.');
+			fetchMatchInformation();
+		}else{
 			fetchMatchInformation();
 			location.reload();
 		}
-		fetchMatchInformation();
 	</script>
   </body>
 </html>

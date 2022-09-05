@@ -9,12 +9,6 @@
 /*                                       				*/
 /********************************************************/
 
-//const validationChecker = ('; '+document.cookie).split(`; activated=`).pop().split(';')[0];
-
-//if(validationChecker != 'true'){
-	//window.location = 'index.html';
-//}
-
 var sportlink_clientID = 'client_id=iLqhgc5Npa'
 var sportlink_url = 'https://data.sportlink.com/'
 var programma_dagen = '7'
@@ -54,7 +48,7 @@ var matchProgramTimeNow = (vandaag + 'T' + uren + ':' + minuten + ':00');
 function fetchMatchInformation(){
 	$.ajax({
 		url: sportlink_url + "programma?gebruiklokaleteamgegevens=NEE&eigenwedstrijden=JA&thuis=JA&uit=NEE&" + sportlink_clientID,
-		//url: "http://192.168.0.125/wvv_v2/test_feed_wedstrijdinfo.html",
+		//url: "http://192.168.2.125/wvv_v2/test_feed_wedstrijdinfo.html",
 		async: false,
 		dataType: 'json',
 		success: function(matchInfo) {
@@ -143,15 +137,15 @@ function fetchMatchInformation(){
 			scrollListHeight = calulContent;
 		}
 	});
-	document.cookie = "height="+scrollListHeight;
+	document.cookie = "height="+scrollListHeight+"-spelendeWedstrijden";
 }
 
 //Cleaned Function
 function fetchMatchResults(){
-	$('#rcorners_matchinfo').height($(window).height() - 25)
+	$('#rcorners_matchinfo').height($(window).height() - 160)
 	$.ajax({
 		url: sportlink_url+"uitslagen?gebruiklokaleteamgegevens=NEE&thuis=JA&uit=JA&" + sportlink_clientID,
-		//url: "http://192.168.0.125/wvv_v2/test_feed_uitslag.html",
+		//url: "http://192.168.2.125/wvv_v2/test_feed_uitslag.html",
 		async: false,
 		dataType: 'json',
 		success: function(uitslag) {
@@ -161,12 +155,17 @@ function fetchMatchResults(){
 				var thuisteam = uitslag[i2].thuisteam;
 				var uitteam = uitslag[i2].uitteam;
 				var uitslagmatch = uitslag[i2].uitslag;
+				var statusmatch = uitslag[i2].status;
 				var matchdateresult = uitslag[i2].wedstrijddatum.split('T')[0];
 				var datumopgemaakt = uitslag[i2].datumopgemaakt;
 				var competitiesoort = uitslag[i2].competitiesoort;
 
 				if(competitiesoort == 'regulier') {
 					competitiesoort = 'Competitie'
+				}
+
+				if(competitiesoort == 'beker') {
+					competitiesoort = 'Beker'
 				}
 
 				if(competitiesoort == 'oefen') {
@@ -214,7 +213,11 @@ function fetchMatchResults(){
 					//Create wedstrijdUitslagDiv
 					var wedstrijdUitslagDiv = document.createElement("div");
 					wedstrijdUitslagDiv.setAttribute('id', 'wedstrijdUitslag');
-					wedstrijdUitslagDiv.innerHTML = (uitslagmatch);
+					if((uitslagmatch === null) && (statusmatch === 'Afgelast')){
+						wedstrijdUitslagDiv.innerHTML = 'Afg.';
+					}else{
+						wedstrijdUitslagDiv.innerHTML = (uitslagmatch);
+					}
 					
 					//Create uitteamNameDiv
 					var uitteamNameDiv = document.createElement("div");
@@ -247,19 +250,19 @@ function fetchMatchResults(){
 				el.appendChild(noMatchResults);
 			}
 								
-			var calulResult = matchCounter * 250;
+			var calulResult = matchCounter * 65;
 			scrollListHeight = calulResult;
 		}
   });
-document.cookie = "height="+scrollListHeight;
+document.cookie = "height="+scrollListHeight+"-uitslagWedstrijden";
 }
 
 //Cleaned Function
 function fetchProgramma(){
-	$('#rcorners_matchinfo').height($(window).height() - 25)
+	$('#rcorners_matchinfo').height($(window).height() - 160)
     $.ajax({
         url: sportlink_url+"programma?gebruiklokaleteamgegevens=NEE&aantaldagen=" + programma_dagen + "&eigenwedstrijden=JA&thuis=JA&uit=JA&" + sportlink_clientID,
-		//url: "http://192.168.0.125/wvv_v2/test_feed_programma.html",
+		//url: "http://192.168.2.125/wvv_v2/test_feed_programma.html",
         async: false,
         dataType: 'json',
         success: function(programma) {
@@ -278,6 +281,10 @@ function fetchProgramma(){
 
 				if(competitiesoort == 'regulier') {
 					competitiesoort = 'Competitie'
+				}
+
+				if(competitiesoort == 'beker') {
+					competitiesoort = 'Beker'
 				}
 
 				if(competitiesoort == 'oefen') {
@@ -358,10 +365,9 @@ function fetchProgramma(){
 				noMatchProgram.innerHTML = ('<img src=\"images\\match_bg.png\"></img><br/><h1>Er zijn geen aankomende wedstrijden bekend.</h1>');
 				el.appendChild(noMatchProgram);
 			}
-			
 			scrollListHeight = calulContent;
 		}
 	});
-	document.cookie = "height="+scrollListHeight;
+	document.cookie = "height="+scrollListHeight+"-komendeWedstrijden";
 }
 
