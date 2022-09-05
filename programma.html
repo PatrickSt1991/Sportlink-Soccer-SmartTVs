@@ -54,7 +54,6 @@
 			<div class="slide"><img src="images/sponsor/keepersfabriek.png"></div>
 			<div class="slide"><img src="images/sponsor/detreffer.png"></div>
 			<div class="slide"><img src="images/sponsor/muuroloog.png"></div>
-			<div class="slide"><img src="images/sponsor/wvv2.jpg"></div>
 			<div class="slide"><img src="images/sponsor/hofman.png"></div>
 			<div class="slide"><img src="images/sponsor/stukaschuur.jpg"></div>
 			<div class="slide"><img src="images/sponsor/soko.png"></div>
@@ -70,11 +69,16 @@
 	<script src="js/flickity.pkgd.min.js"></script>
 	<script src="js/carousel.js"></script>
 	<script>
-		if (document.cookie.indexOf('height=') == '-1'){
+		var cookieCheck = (document.cookie).split('=').pop().split('-')[1];
+		var heightCheck = (document.cookie).split('=').pop().split('-')[0];
+		
+		if ((cookieCheck === 'komendeWedstrijden') && (heightCheck != null)){
+			console.log('Laat wedstrijdprogramma zien.');
+			fetchProgramma();
+		}else{
 			fetchProgramma();
 			location.reload();
 		}
-		fetchProgramma();
 	</script>
   </body>
 </html>

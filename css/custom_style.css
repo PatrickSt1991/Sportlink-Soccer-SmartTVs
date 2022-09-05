@@ -11,11 +11,18 @@ html {
 
 body {
 	background-color: transparent;
+	overflow: hidden; /* Hide scrollbars */
+}
+
+#contentBoxIndex {
+	 width: 90%; 
+	 margin-top: 50px;
 }
 
 #contentBox {
 	 width: 90%; 
 	 margin-top: 50px;
+	 cursor: none;
 }
 
 #rcorners {
@@ -243,7 +250,6 @@ body {
 	border-top-left-radius: 25px;
 	border-bottom-left-radius: 25px;
 	font-weight: bold;
-	opacity:0.7;
 	background: #de0b0b;
 	color: #ffffff;
 	text-align: center;
@@ -253,7 +259,7 @@ body {
 	padding: 10px 15px;
 	width: 30%;
 	font-weight: bold;
-	opacity:0.7;
+	/*opacity:0.7;*/
 	background: #de0b0b;
 	color: #ffffff;
 	text-align: center;
@@ -262,7 +268,7 @@ body {
 #kleedkamer_fixed {
     padding: 10px 15px;
     width: 10%;
-    opacity:0.7;
+    /*opacity:0.7;*/
 	background: #de0b0b;
 	color: #ffffff;
     font-weight: bold;
@@ -273,7 +279,7 @@ body {
 	padding: 10px 15px;
 	width: 30%;
 	font-weight: bold;
-	opacity:0.7;
+	/*opacity:0.7;*/
 	background: #de0b0b;
 	color: #ffffff;
 	text-align: center;
@@ -284,7 +290,7 @@ body {
     width: 10%;
     font-weight: bold;
     background: #de0b0b;
-	opacity:0.7;
+	/*opacity:0.7;*/
 	color: #ffffff;
     text-align: center;
 	border-top-right-radius: 25px;

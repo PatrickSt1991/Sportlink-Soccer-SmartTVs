@@ -1,12 +1,9 @@
 (function test($) {
-	let cookieScroll = ('; '+document.cookie).split(`; height=`).pop().split(';')[0];
+	let cookieScroll = (document.cookie).split('=').pop().split('-')[0];
 	$.fn.autoscroll = function(options) {
 		var settings = $.extend({}, $.fn.autoscroll.defaults, options);
 		return this.each(function() {
 			var $this = $(this);
-			console.log($this.length);
-			console.log(cookieScroll);
-			console.log($this[0].clientHeight);
 			if ($this.length > 0 && cookieScroll > $this[0].clientHeight) {
 				var scrollTimer,
 					scrollTop = 0;
@@ -23,14 +20,6 @@
 				}
 
 				$this.hover(function() {
-					$this.css("overflow-y", "auto");
-					if (settings.hideScrollbar) {
-						$this.addClass("hide-scrollbar");
-					}
-					if($.type(settings.handlerIn) === "function") {
-						settings.handlerIn();
-					}
-				}, function() {
 					$this.css("overflow-y", "hidden");
 					scrollTimer = setInterval(function() {
 						scrollList();
