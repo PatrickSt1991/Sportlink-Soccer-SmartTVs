@@ -1,10 +1,13 @@
 (function test($) {
+	let cookieInterval = (document.cookie).split('=').pop().split('-')[1];
 	let cookieScroll = (document.cookie).split('=').pop().split('-')[0];
 	$.fn.autoscroll = function(options) {
 		var settings = $.extend({}, $.fn.autoscroll.defaults, options);
 		return this.each(function() {
 			var $this = $(this);
-			if ($this.length > 0 && cookieScroll > $this[0].clientHeight) {
+			//console.log(cookieScroll);
+			//console.log($this[0].clientHeight - 150);
+			if (($this.length > 0 && cookieScroll > $this[0].clientHeight - 150) || ($this.length > 0 && cookieScroll == $this[0].clientHeight - 150)) {
 				var scrollTimer,
 					scrollTop = 0;
 
@@ -31,13 +34,23 @@
 			}
 		});
 	}
-	$.fn.autoscroll.defaults = {
-		interval: 25,  //25
-		hideScrollbar: true,
-		handlerIn: null,
-		handlerOut: null
+	if(cookieInterval === 'spelendeWedstrijden'){
+		$.fn.autoscroll.defaults = {
+			interval: 95,  //25
+			hideScrollbar: true,
+			handlerIn: null,
+			handlerOut: null
 
-	};
+		};
+	}else{
+		$.fn.autoscroll.defaults = {
+			interval: 25,  //25
+			hideScrollbar: true,
+			handlerIn: null,
+			handlerOut: null
+
+		};
+	}
 	$(function() {
 		$("[data-autoscroll]").autoscroll();
 	});
