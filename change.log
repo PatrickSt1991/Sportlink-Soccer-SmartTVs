@@ -30,8 +30,18 @@
  - Bug: fetchMatchResults, nog scrolling when screenHeight was equal to content height.
 
 --------------------------------------------------------------------------
-## [2.1.5] - 2022-09-22													##
+## [2.1.5] - 2022-09-25													##
 --------------------------------------------------------------------------
     
 ### Fixed
  - Bug: fetchMatchInformation, scrolling when not neceserry.
+
+--------------------------------------------------------------------------
+## [2.1.6] - 2022-09-25													##
+--------------------------------------------------------------------------
+    
+### Created
+ - Bug: fetchMatchInformation, added counter for actual matches inside time bracket.
+ 
+### Fixed
+ - Bug: fetchMatchInformation, changed ulCounter from matchChecker to actual matches inside time bracket.
